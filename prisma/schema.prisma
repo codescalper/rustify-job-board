@@ -23,7 +23,7 @@ model JOB {
   applicationUrl   String?
   applicationEmail String?
   salary           Int
-  companyLogoUrl   String
+  companyLogoUrl   String?
   approved         Boolean  @default(false)
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
