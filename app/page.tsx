@@ -1,3 +1,4 @@
+import JobFilterSideBar from "@/components/JobFilterSideBar";
 import JobListItem from "@/components/JobList";
 import prisma from "@/lib/prisma";
 import Image from "next/image";
@@ -32,11 +33,14 @@ export default async function Home() {
             here! 🦀
           </p>
         </div>
-        <div className="space-y-4">
+        <section className="flex flex-col md:flex-row gap-4">
+        <JobFilterSideBar />
+        <div className="space-y-4 grow">
           {jobs.map((job) => (
             <JobListItem key={job.id} job={job} />
           ))}
         </div>
+        </section>
       </main>
     </>
   );
