@@ -62,6 +62,10 @@ export default function JobListItem({
 
       <div className="hidden sm:flex flex-col shrink-0 items-end justify-between">
         <Badge>{type}</Badge>
+        <span className="flex items-center gap-1.5 text-muted-foreground">
+          <Clock size={16} className="shrink-0" /> 
+          {formatDate(createdAt)}
+        </span>
       </div>
     </article>
   );
