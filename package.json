@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "seed": "node scripts/seed.js"
-    },
-
+  },
   "dependencies": {
     "@clerk/nextjs": "^4.29.7",
     "@hookform/resolvers": "^3.3.4",
@@ -21,6 +20,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "date-fns": "^3.3.1",
+    "lucide-react": "^0.323.0",
     "markdown-draft-js": "^2.4.0",
     "nanoid": "^5.0.5",
     "next": "14.1.0",
