@@ -19,3 +19,5 @@ export default function JobFilterSideBar() {
     </aside>
   );
 }
+
+//https://youtu.be/XD5FpbVpWzk?t=4727 Learn more about server compoenent
