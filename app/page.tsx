@@ -24,7 +24,7 @@ export default async function Home() {
                 width={60}
                 height={30}
               />
-              <span className="ml-2">Rustify</span>{" "}
+              <span className="ml-2 text-zinc-300">Rustify</span>{" "}
             </h1>
           </div>
           <p>

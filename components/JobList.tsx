@@ -4,6 +4,16 @@ import companyLogo from "../public/company-logo-placeholder.png";
 import {Banknote, Briefcase, Clock, Globe2, MapPin} from 'lucide-react';
 import { formatCurrency, formatDate } from "@/lib/utils";
 import Badge from "./Badge";
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
 interface JobsListProps {
   job: JOB;
 }
@@ -21,7 +31,7 @@ export default function JobListItem({
   },
 }: JobsListProps) {
   return (
-    <article className="flex gap-3 rounded-lg border p-5 hover:bg-muted/60 ">
+    <Card className="flex gap-3 rounded-lg border p-5 hover:bg-muted/60 ">
       <Image
         src={companyLogoUrl || companyLogo}
         alt={`${companyName} logo`}
@@ -67,6 +77,6 @@ export default function JobListItem({
           {formatDate(createdAt)}
         </span>
       </div>
-    </article>
+    </Card>
   );
 }

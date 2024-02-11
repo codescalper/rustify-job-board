@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,14 @@ export default function RootLayout({
       <head>
       <link rel="icon" href="/rustify.png" sizes="any" />
       </head>
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
       <body className={`${inter.className} min-w-[350px]` }>{children}</body>
+      </ThemeProvider>
     </html>
   );
 }
