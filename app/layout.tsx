@@ -8,7 +8,10 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Rustify",
+  title: {
+    default: "Rustify",
+    template:  `%s | Rustify`,
+  },
   description:
     "Rustify is a job board for Rust developers. Find your next Rust job here! 🦀",
 };

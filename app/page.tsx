@@ -24,6 +24,20 @@ export default async function Home({
     type,
     remote:remote === true
   }
+
+  function getTitle({ q, type, location, remote }: JobFilterValue) {
+    const titlePrefix = q
+      ? `${q} jobs`
+      : type
+        ? `${type} developer jobs`
+        : remote
+          ? "Remote developer jobs"
+          : "All developer jobs";
+  
+    const titleSuffix = location ? ` in ${location}` : "";
+  
+    return `${titlePrefix}${titleSuffix}`;
+  }
  
   return (
     <>
@@ -32,13 +46,8 @@ export default async function Home({
           <div className="flex items-center justify-center">
             {" "}
             <h1 className="text-4xl flex font-extrabold tracking-tight lg:text-5xl">
-              <Image
-                src="/rustify.png"
-                alt="Rustify logo"
-                width={60}
-                height={30}
-              />
-              <span className="ml-2 text-zinc-300">Rustify</span>{" "}
+             
+              <span className="ml-2 text-zinc-300">{getTitle(filterValues)}</span>
             </h1>
           </div>
           <p>
