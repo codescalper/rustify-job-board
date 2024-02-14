@@ -5,7 +5,7 @@ import { Prisma } from "@prisma/client";
 
 interface JobResultsProps {
     filterValues: JobFilterValue;
-    }
+}
 
 
 export default async function JobResults({filterValues:{q,location,type,remote},}:JobResultsProps) {

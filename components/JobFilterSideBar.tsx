@@ -45,9 +45,12 @@ export default async function JobFilterSideBar({defaultValues}:JobFilterSidebarP
       locations
         .map((location) => {
           location;
+          return location.location;
         })
         .filter(Boolean),
     )) as string[]
+
+    console.log(distinctLocation)
   return (
     <aside className="sticky top-0 h-fit rounded-lg border bg-background p-4 md:w-[260px]">
       <form action={filterJobs} key={JSON.stringify(defaultValues)}>
@@ -62,20 +65,20 @@ export default async function JobFilterSideBar({defaultValues}:JobFilterSidebarP
             />
           </div>
           <div className="flex flex-col gap-2">
-            <Label htmlFor="type">Type</Label>
-            <Select
-              id="type"
-              name="type"
-              defaultValue={defaultValues.type || ""}
-            >
-              {/* <option value="">All types</option>
-              {jobTypes.map((type) => (
-                <option key={type} value={type}>
-                  {type}
-                </option>
-              ))} */}
-            </Select>
-          </div>
+          <Label htmlFor="type">Type</Label>
+          <Select
+            id="type"
+            name="type"
+            defaultValue={defaultValues.type || ""}
+          >
+            {/* <option value="">All types</option>
+            {jobTypes.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))} */}
+          </Select>
+        </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="location">Location</Label>
             <Select

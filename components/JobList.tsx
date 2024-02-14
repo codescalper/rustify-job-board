@@ -3,7 +3,7 @@ import Image from "next/image";
 import companyLogo from "../public/company-logo-placeholder.png";
 import {Banknote, Briefcase, Clock, Globe2, MapPin} from 'lucide-react';
 import { formatCurrency, formatDate } from "@/lib/utils";
-import Badge from "./Badge";
+import Badge from "./ui/Badge";
 
 import {
   Card,
