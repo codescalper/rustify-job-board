@@ -3,6 +3,7 @@ import JobListItem from "@/components/JobList";
 import JobResults from "@/components/JobResults";
 import prisma from "@/lib/prisma";
 import { JobFilterValue } from "@/lib/validation";
+import { Metadata } from "next";
 import Image from "next/image";
 
 interface PageProps{
@@ -38,6 +39,20 @@ export default async function Home({
   
     return `${titlePrefix}${titleSuffix}`;
   }
+
+  function generateMetadata({
+    searchParams: { q, type, location, remote },
+  }: PageProps): Metadata {
+    return {
+      title: `${getTitle({
+        q,
+        type,
+        location,
+        remote: remote === true,
+      })} | Rustify Jobs`,
+    };
+  }
+  
  
   return (
     <>
