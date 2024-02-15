@@ -15,6 +15,7 @@ interface PageProps{
 
   }
 }
+
 export default async function Home({
   searchParams:{q,location,type,remote}
 }:PageProps) {
