@@ -6,26 +6,24 @@ import { JobFilterValue } from "@/lib/validation";
 import { Metadata } from "next";
 import Image from "next/image";
 
-interface PageProps{
-  searchParams:{
-    q?:string,
-    location?:string,
-    type?:string,
-    remote?:boolean
-
-  }
+interface PageProps {
+  searchParams: {
+    q?: string;
+    location?: string;
+    type?: string;
+    remote?: boolean;
+  };
 }
 
 export default async function Home({
-  searchParams:{q,location,type,remote}
-}:PageProps) {
-
-  const filterValues:JobFilterValue = {
-    q:q || "",
+  searchParams: { q, location, type, remote },
+}: PageProps) {
+  const filterValues: JobFilterValue = {
+    q: q || "",
     location,
     type,
-    remote:remote === true
-  }
+    remote: remote === "true",
+  };
 
   function getTitle({ q, type, location, remote }: JobFilterValue) {
     const titlePrefix = q
@@ -35,9 +33,9 @@ export default async function Home({
         : remote
           ? "Remote developer jobs"
           : "All developer jobs";
-  
+
     const titleSuffix = location ? ` in ${location}` : "";
-  
+
     return `${titlePrefix}${titleSuffix}`;
   }
 
@@ -53,17 +51,17 @@ export default async function Home({
       })} | Rustify Jobs`,
     };
   }
-  
- 
+
   return (
     <>
       <main className="m-auto my-10 max-w-5xl space-y-10 px-3">
         <div className="space-y-5 text-center">
           <div className="flex items-center justify-center">
             {" "}
-            <h1 className="text-4xl flex font-extrabold tracking-tight lg:text-5xl">
-             
-              <span className="ml-2 text-zinc-300">{getTitle(filterValues)}</span>
+            <h1 className="flex text-4xl font-extrabold tracking-tight lg:text-5xl">
+              <span className="ml-2 text-zinc-300">
+                {getTitle(filterValues)}
+              </span>
             </h1>
           </div>
           <p>
@@ -71,9 +69,9 @@ export default async function Home({
             here! 🦀
           </p>
         </div>
-        <section className="flex flex-col md:flex-row gap-4">
-        <JobFilterSideBar defaultValues={filterValues} />
-        <JobResults filterValues={filterValues}/>
+        <section className="flex flex-col gap-4 md:flex-row">
+          <JobFilterSideBar defaultValues={filterValues} />
+          <JobResults filterValues={filterValues} />
         </section>
       </main>
     </>
