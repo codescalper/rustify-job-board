@@ -19,7 +19,7 @@ async function filterJobs(formData: FormData) {
     ...(remote && { remote: "true" }),
   });
 
-  redirect(`/jobs?${searchParams.toString()}`);
+  redirect(`?${searchParams.toString()}`);
 }
 
 interface JobFilterSidebarProps {
@@ -74,11 +74,11 @@ export default async function JobFilterSideBar({
               defaultValue={defaultValues.type || ""}
             >
               <option value="">All types</option>
-            {jobTypes.map((type) => (
-              <option key={type} value={type}>
-                {type}
-              </option>
-            ))}
+              {jobTypes.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
             </Select>
           </div>
           <div className="flex flex-col gap-2">
@@ -106,7 +106,7 @@ export default async function JobFilterSideBar({
             />
             <Label htmlFor="remote">Remote jobs</Label>
           </div>
-          <FormSubmitButton className="w-full">Filter jobs</FormSubmitButton>
+          <Button  type="submit" className="w-full">Filter jobs</Button>
         </div>
       </form>
     </aside>
