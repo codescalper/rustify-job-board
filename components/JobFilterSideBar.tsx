@@ -10,18 +10,16 @@ import { jobTypes } from "@/lib/job-types";
 
 async function filterJobs(formData: FormData) {
   "use server";
-  // const values = Object.fromEntries(formData.entries());
-  // const { q, type, location, remote } = JobFilterSchema.parse(values);
-  // const searchParams = new URLSearchParams({
-  //   ...(q && { q: q.trim() }),
-  //   ...(type && { type }),
-  //   ...(location && { location }),
-  //   ...(remote && { remote: "true" }),
-  // });
+  const values = Object.fromEntries(formData.entries());
+  const { q, type, location, remote } = JobFilterSchema.parse(values);
+  const searchParams = new URLSearchParams({
+    ...(q && { q: q.trim() }),
+    ...(type && { type }),
+    ...(location && { location }),
+    ...(remote && { remote: "true" }),
+  });
 
-  // redirect(`/jobs?${searchParams.toString()}`);
-
-  console.log(formData.get("q") as string);
+  redirect(`/jobs?${searchParams.toString()}`);
 }
 
 interface JobFilterSidebarProps {
@@ -57,7 +55,7 @@ export default async function JobFilterSideBar({
   console.log(distinctLocation);
   return (
     <aside className="sticky top-0 h-fit rounded-lg border bg-background p-4 md:w-[260px]">
-      <form action={filterJobs} >
+      <form action={filterJobs} key={JSON.stringify(defaultValues)}>
         <div className="space-y-4">
           <div className="flex flex-col gap-2">
             <Label htmlFor="q">Search</Label>
@@ -108,7 +106,7 @@ export default async function JobFilterSideBar({
             />
             <Label htmlFor="remote">Remote jobs</Label>
           </div>
-          <Button  type="submit" className="w-full">Filter jobs</Button>
+          <FormSubmitButton className="w-full">Filter jobs</FormSubmitButton>
         </div>
       </form>
     </aside>
