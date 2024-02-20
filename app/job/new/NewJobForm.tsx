@@ -69,7 +69,7 @@ export default function NewJobForm() {
                 <FormItem>
                   <FormLabel>Job title</FormLabel>
                   <FormControl>
-                    <Input placeholder="e.g. Frontend Developer" {...field} />
+                    <Input placeholder="e.g. Backend Developer" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

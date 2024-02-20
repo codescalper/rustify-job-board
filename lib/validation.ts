@@ -71,7 +71,8 @@ export const createJobSchema = z
       .max(9, "Number must be less than 9 digits")
       .regex(numericRegex, "Must be a number"),
   })
-  .and(applicationSchema);
+  .and(applicationSchema)
+  .and(locationSchema);
 
 export const JobFilterSchema = z.object({
   q: z.string().optional(),
