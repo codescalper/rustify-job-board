@@ -11,7 +11,7 @@ interface PageProps {
     q?: string;
     location?: string;
     type?: string;
-    remote?: boolean;
+    remote?: string;
   };
 }
 
@@ -47,7 +47,7 @@ export default async function Home({
         q,
         type,
         location,
-        remote: remote === true,
+        remote: remote === "true",
       })} | Rustify Jobs`,
     };
   }
