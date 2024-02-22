@@ -1,17 +1,15 @@
 import { z } from "zod";
 import { jobTypes, locationTypes } from "./job-types";
 
-const compnayLogoSchema = z
+const companyLogoSchema = z
   .custom<File | undefined>()
-  .refine((val) => {
-    if (val) {
-      !val || (val instanceof File && val.type.startsWith("image/"));
-    }
-  }, "Must be an image file")
   .refine(
-    (val) => !val || val.size < 1024 * 1024 * 2,
-    "Image size must be less than 2MB",
-  );
+    (file) => !file || (file instanceof File && file.type.startsWith("image/")),
+    "Must be an image file",
+  )
+  .refine((file) => {
+    return !file || file.size < 1024 * 1024 * 2;
+  }, "File must be less than 2MB");
 
 const numericRegex = /^\d+$/;
 
@@ -63,7 +61,7 @@ export const createJobSchema = z
       .min(1, "Required")
       .refine((val) => jobTypes.includes(val), "Invalid job type"),
     companyName: z.string().min(1, "Required").max(100),
-    companyLogo: compnayLogoSchema,
+    companyLogo: companyLogoSchema,
     description: z.string().max(5000).optional(),
     salary: z
       .string()
