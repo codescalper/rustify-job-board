@@ -12,11 +12,12 @@ interface PageProps {
     location?: string;
     type?: string;
     remote?: string;
+    page?: string;
   };
 }
 
 export default async function Home({
-  searchParams: { q, location, type, remote },
+  searchParams: { q, location, type, remote, page },
 }: PageProps) {
   const filterValues: JobFilterValue = {
     q: q || "",
@@ -71,7 +72,10 @@ export default async function Home({
         </div>
         <section className="flex flex-col gap-4 md:flex-row">
           <JobFilterSideBar defaultValues={filterValues} />
-          <JobResults filterValues={filterValues} />
+          <JobResults
+            filterValues={filterValues}
+            page={page ? parseInt(page) : undefined}
+          />
         </section>
       </main>
     </>
