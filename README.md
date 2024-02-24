@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+<a href=https://github.com/codescalper/rustify-job-board target="_blank">
+<img src='https://cdn.discordapp.com/attachments/1009795082410545262/1210927905555750962/image.png?ex=65ec577e&is=65d9e27e&hm=3386eb22da827afc70770ddcbcd1bc41598e0977d11f14e777e13cdec266197a&' width="100%" alt="Banner" />
+</a>
+</p>
 
-## Getting Started
+<p align="center">
+<img src="https://img.shields.io/github/contributors/codescalper/rustify-job-board" alt="GitHub contributors" />
+<img src="https://img.shields.io/github/discussions/codescalper/rustify-job-board" alt="GitHub discussions" />
+<img src="https://img.shields.io/github/issues/codescalper/rustify-job-board" alt="GitHub issues" />
+<img src="https://img.shields.io/github/issues-pr/codescalper/rustify-job-board" alt="GitHub pull request" />
+</p>
 
-First, run the development server:
+## 🔍 Table of Contents
+
+- [💻 Stack](#stack)
+
+- [📝 Project Summary](#project-summary)
+
+- [⚙️ Setting Up](#setting-up)
+
+- [🚀 Run Locally](#run-locally)
+
+- [🙌 Contributors](#contributors)
+
+- [📄 License](#license)
+
+## 💻 Stack
+
+- [clerk/nextjs](https://github.com/clerkinc/clerk): Authentication for Next.js applications.
+- [prisma/client](https://www.prisma.io/): Data fetching and management for databases.
+- [react-hook-form](https://react-hook-form.com/): Form validation and state management.
+- [next](https://nextjs.org/): Framework for server-rendered React applications.
+- [tailwindcss](https://tailwindcss.com/): Utility-first CSS framework for styling.
+- [typescript](https://www.typescriptlang.org/): Typed superset of JavaScript for better code quality.
+- [eslint](https://eslint.org/): Code linting tool for maintaining code quality.
+- [prettier](https://prettier.io/): Code formatter to enforce consistent code style.
+
+## 📝 Project Summary
+
+- [**app**](app): Main application logic and structure.
+- [**components**](components): Reusable UI components.
+- [**lib**](lib): Shared libraries and utilities.
+- [**prisma**](prisma): Database ORM configuration.
+- [**public**](public): Static assets and files.
+- [**scripts**](scripts): Automation and utility scripts.
+- [**app/admin**](app/admin): Admin-specific functionality.
+- [**app/job**](app/job): Job-related functionality.
+- [**app/job-submitted**](app/job-submitted): Submitted job data handling.
+- [**components/ui**](components/ui): UI-specific components.
+
+## ⚙️ Setting Up
+
+#### Your Environment Variable
+
+- Step 1
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/codescalper/rustify-job-board
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+DATABASE_URL=
+BLOB_READ_WRITE_TOKEN=
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Run Locally
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1.Clone the rustify-job-board repository:
 
-## Learn More
+```sh
+git clone https://github.com/codescalper/rustify-job-board
+```
 
-To learn more about Next.js, take a look at the following resources:
+2.Install the dependencies with one of the package managers listed below:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm install
+bun install
+npm install
+yarn install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3.Start the development mode:
 
-## Deploy on Vercel
+```bash
+pnpm dev
+bun dev
+npm run dev
+yarn dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🙌 Contributors
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<table style="border:1px solid #404040;text-align:center;width:100%">
+<tr><td style="width:14.29%;border:1px solid #404040;">
+        <a href="https://github.com/codescalper" spellcheck="false">
+          <img src="https://avatars.githubusercontent.com/u/92156721?v=4?s=100" width="100px;" alt="codescalper"/>
+          <br />
+          <b>codescalper</b>
+        </a>
+        <br />
+        <a href="https://github.com/codescalper/rustify-job-board/commits?author=codescalper" title="Contributions" spellcheck="false">
+          43 contributions
+        </a>
+      </td></table>
+
+## 🌐 Website
+
+[Rustify](https://rustify.vercel.app/)
