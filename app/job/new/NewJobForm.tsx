@@ -50,6 +50,7 @@ export default function NewJobForm() {
     try {
       await createJobPosting(formData);
     } catch (error) {
+      console.log(error);
       alert("An error occurred. Please try again.");
     }
   }
