@@ -4,6 +4,9 @@ import FormSubmitButton from "@/components/FormSubmitButton";
 import { JOB } from "@prisma/client";
 import { useFormState } from "react-dom";
 import { approveSubmission, deleteJob } from "./actions";
+import { notFound, useRouter } from "next/navigation";
+import { useClerk } from "@clerk/nextjs";
+import { useEffect } from "react";
 
 interface AdminSidebarProps {
   job: JOB;

@@ -3,11 +3,20 @@
 import { useClerk } from "@clerk/nextjs";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function AdminNavbar() {
   const { user, signOut } = useClerk();
   const router = useRouter();
 
+  const allowedEmail = "msfunbook@gmail.com";
+
+  useEffect(() => {
+    if (user && user?.primaryEmailAddress?.emailAddress !== allowedEmail) {
+      router.push("/");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
   return (
     <div className="px-3">
       <div className="m-auto flex h-10 max-w-5xl items-center justify-between gap-2">
